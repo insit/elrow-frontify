@@ -1,0 +1,120 @@
+.main-sidebar {
+position: fixed;
+top: 0;
+left:0;
+padding: 0;
+height: 100vh;
+width: $sidebar-expanded-width;
+z-index: $zindex-navbar-fixed + 1;
+
+&.collapsed {
+width: $sidebar-collapsed-width;
+
+.collapse-hide {
+display: none;
+}
+
+.menu-item {
+padding-left: 6px!important;
+}
+
+.sidebar-top-nav , .sidebar-bottom-nav, .sidebar-content {
+width: $sidebar-collapsed-width;
+}
+}
+
+.sidebar-top-nav , .sidebar-bottom-nav {
+position: fixed;
+padding: 0 15px;
+border-right: 1px solid $darker;
+font-size: $navbar-font-size;
+color: $grey-blue;
+width: $sidebar-expanded-width;
+}
+
+.sidebar-top-nav {
+top: 0;
+left: 0;
+overflow: hidden;
+height: $navbar-height;
+
+.squad-badge {
+margin-top: ($navbar-height - $badge-size-large) / 2;
+margin-right: 10px;
+}
+
+.squad-name {
+@include  ellipses();
+cursor: pointer;
+color: $grey-blue;
+
+.icon-chevrondown {
+margin-left: 10px;
+}
+}
+}
+
+.sidebar-bottom-nav {
+bottom: 0;
+height: $navbar-height;
+overflow: hidden;
+}
+
+.sidebar-content {
+position: fixed;
+padding-top: $navbar-height + 15px;
+padding-left: 10px;
+width: $sidebar-expanded-width;
+background-color: $darker;
+height: 100%;
+
+.menu-title {
+font-family: HouschkaRoundedAlt-DemiBold;
+color: $grey-blue;
+font-size: 12px;
+}
+
+.menu-list {
+list-style: none;
+padding: 0;
+
+>.menu-item {
+padding: 15px 0 18px 12.2px;
+cursor: pointer;
+color: $cool-grey;
+font-size: 15px;
+
+.icon {
+width: 40px;
+font-size: 22px;
+}
+
+&:hover {
+background-color: $dark;
+}
+
+&.active {
+color: $white;
+cursor: auto;
+}
+}
+}
+}
+
+.sidebar-bottom-nav {
+background-color: $darker;
+text-align: center;
+
+.icon {
+color: $white;
+
++.icon {
+margin-left: -10px;
+}
+}
+
+.collapse-sidebar, .expand-sidebar {
+line-height: $navbar-height;
+}
+}
+}
